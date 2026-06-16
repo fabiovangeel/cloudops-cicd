@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: cloudops-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloudops-app
+  strategy:
+    canary:
+      steps:
+        - setWeight: 20
+        - pause: { duration: 10s }
+        - setWeight: 50
+        - pause: { duration: 10s }
+  template:
+    metadata:
+      labels:
+        app: cloudops-app
+    spec:
+      containers:
+        - name: cloudops-app
+          image: ghcr.io/fabiovangeel/cloudops-cicd:latest
+          ports:
+            - containerPort: 3000
