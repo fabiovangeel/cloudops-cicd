@@ -1,8 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
+- ../../base
 namespace: qa
 images:
-  - name: ghcr.io/fabiovangeel/cloudops-cicd
-    newTag: latest
+- name: ghcr.io/fabiovangeel/cloudops-cicd
+  newName: ghcr.io/fabiovangeel/cloudops-cicd
+  newTag: sha-118f14c08cf5421683ca7f3bc93eaf7b150fd1d2
