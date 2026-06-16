@@ -6,4 +6,4 @@ namespace: dev
 images:
 - name: ghcr.io/fabiovangeel/cloudops-cicd
   newName: ghcr.io/fabiovangeel/cloudops-cicd
-  newTag: sha-118f14c08cf5421683ca7f3bc93eaf7b150fd1d2
+  newTag: sha-1d8b28cffa757926dabe0ad09f5610b963d070c0
